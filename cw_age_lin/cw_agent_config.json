@@ -1,18 +1,39 @@
 {
-  "agent": {
-    "metrics_collection_interval": 10
-  },
-  "metrics": {
-    "metrics_collected": {
-      "disk": {
-        "resources": ["/", "/tmp"],
-        "measurement": ["disk_used_percent"],
-        "ignore_file_system_types": ["sysfs", "devtmpfs"]
-      },
-      "mem": {
-        "measurement": ["mem_available_percent"]
-      }
+    "agent": {
+        "metrics_collection_interval": 60
     },
-    "aggregation_dimensions": [["InstanceId", "InstanceType"], ["InstanceId"]]
-  }
+    "metrics": {
+        "namespace": "CWAgent",
+        "append_dimensions": {
+            "InstanceId": "${aws:InstanceId}"
+        },
+        "metrics_collected": {
+            "mem": {
+                "measurement": [
+                    "used_percent"
+                ]
+            },
+            "cpu": {
+                "measurement": [
+                    "usage_active"
+                ]
+            },
+            "disk": {
+                "measurement": [
+                    "used_percent"
+                ]
+            },
+            "diskio": {
+                "measurement": [
+                    "read_bytes",
+                    "write_bytes"
+                ]
+            },
+            "processes": {
+                "measurement": [
+                    "running"
+                ]
+            }
+        }
+    }
 }
