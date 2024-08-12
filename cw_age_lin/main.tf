@@ -42,7 +42,7 @@ resource "aws_ssm_document" "install_or_update_cw_agent" {
             "sudo yum upgrade -y",
             "sudo wget https://s3.amazonaws.com/amazoncloudwatch-agent/amazon_linux/amd64/latest/amazon-cloudwatch-agent.rpm",
             "sudo rpm -U ./amazon-cloudwatch-agent.rpm",
-            "sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 ssm:/cloudwatch-agent/config -s",
+            "sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c ssm:/cloudwatch-agent-lin/config -s",
             "sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a start",
             "echo 'Done initialization'"
           ]
