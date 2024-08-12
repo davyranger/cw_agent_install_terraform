@@ -11,7 +11,7 @@ resource "aws_ssm_parameter" "cw_agent" {
   description = "Cloudwatch agent config to configure custom log"
   name        = "/cloudwatch-agent-win/config"
   type        = "String"
-  value       = file("../../modules/cw_age_win/cw_agent_config.json")
+  value       = file("./modules/cw_age_win/cw_agent_config.json")
 }
 
 resource "aws_ssm_association" "install_or_update_cloudwatch_agent" {
@@ -24,7 +24,7 @@ resource "aws_ssm_association" "install_or_update_cloudwatch_agent" {
 }
 
 resource "aws_ssm_document" "install_or_update_cw_agent" {
-  name          = "install_or_update_cw_agent"
+  name          = "install_or_update_cw_agent_win"
   document_type = "Command"
 
   content = <<DOC
