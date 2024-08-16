@@ -1,0 +1,36 @@
+# install_cw_agent_using_userdata
+
+#######################################################
+
+to install terraform
+#######################################################
+
+#Download terraform   
+wget https://releases.hashicorp.com/terraform/1.7.4/terraform_1.7.4_linux_amd64.zip
+
+#Unzip terraform binaries    
+unzip terraform_1.7.4_linux_amd64.zip
+
+#Add terraform to /usr/local/bin    
+sudo mv terraform /usr/local/bin
+
+#delete terraform_1.7.4_linux_amd64.zip    
+rm terraform_1.7.4_linux_amd64.zip
+
+#######################################################
+# to check cloudwatch agent status on windows   
+#######################################################   
+& $Env:ProgramFiles\Amazon\AmazonCloudWatchAgent\amazon-cloudwatch-agent-ctl.ps1 -m ec2 -a status   
+#check config file contents    
+cat C:\ProgramData\Amazon\AmazonCloudWatchAgent\Configs\ssm__cloudwatch-agent-win_config   
+#run command from powershell to build your config file using the configuration wizard      
+amazon-cloudwatch-agent-config-wizard.exe
+
+#####################################################
+# to check cloudwatch agent status on linux
+#####################################################   
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a status   
+#check config file contents   
+cat /opt/aws/amazon-cloudwatch-agent/logs/amazon-cloudwatch-agent.log   
+##run command from the command line to build your config file using the configuration wizard   
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
