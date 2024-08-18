@@ -1,0 +1,23 @@
+# Terraform state files
+terraform.tfstate
+terraform.tfstate.backup
+
+# Terraform lock file
+.terraform.lock.hcl
+
+# Terraform directory
+.terraform/
+
+# Local .git directory (should already be ignored by default)
+.git
+
+# Optional: Terraform plan files
+*.tfplan
+
+# Optional: Exclude IDE-specific files
+*.vscode/
+*.idea/
+
+# Optional: Exclude OS-specific files
+.DS_Store
+Thumbs.db
