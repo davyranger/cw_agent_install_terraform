@@ -43,5 +43,5 @@ resource "aws_sns_topic" "ssm_alerts" {
 resource "aws_sns_topic_subscription" "email_alerts" {
   topic_arn = aws_sns_topic.ssm_alerts.arn
   protocol  = "email"
-  endpoint  = "davy.strain@hotmail.com"
+  endpoint  = "insert email here"
 }
