@@ -57,7 +57,7 @@ resource "aws_sns_topic_policy" "sns_policy_win" {
 resource "aws_sns_topic_subscription" "email_alerts" {
   topic_arn = aws_sns_topic.ssm_alerts.arn
   protocol  = "email"
-  endpoint  = "insert email here"
+  endpoint  = "davy.strain@hotmail.com"
 }
 
 # module "sns_win" {
