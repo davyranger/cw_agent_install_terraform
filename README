@@ -1,5 +1,5 @@
 #######################################################   
-to install terraform
+# to install terraform
 #######################################################   
 
 #Download terraform   
@@ -33,8 +33,8 @@ cat /opt/aws/amazon-cloudwatch-agent/logs/amazon-cloudwatch-agent.log
 sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
 
 ############################################################   
-#to test the failure of a windows or linux cwagent install      
-#insert the below command into the run command     
+# to test the failure of a windows or linux cwagent install      
+# insert the below command into the run command     
 ############################################################     
 "runCommand": [
 	"Write-Host 'Failing intentionally'",
