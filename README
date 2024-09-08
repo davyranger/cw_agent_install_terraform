@@ -1,22 +1,22 @@
-#######################################################
+#######################################################   
 to install terraform
-#######################################################
+#######################################################   
 
 #Download terraform   
-wget https://releases.hashicorp.com/terraform/1.7.4/terraform_1.7.4_linux_amd64.zip
+wget https://releases.hashicorp.com/terraform/1.7.4/terraform_1.7.4_linux_amd64.zip   
 
-#Unzip terraform binaries    
-unzip terraform_1.7.4_linux_amd64.zip
+#Unzip terraform binaries       
+unzip terraform_1.7.4_linux_amd64.zip   
 
-#Add terraform to /usr/local/bin    
-sudo mv terraform /usr/local/bin
+#Add terraform to /usr/local/bin       
+sudo mv terraform /usr/local/bin   
 
-#delete terraform_1.7.4_linux_amd64.zip    
-rm terraform_1.7.4_linux_amd64.zip
+#delete terraform_1.7.4_linux_amd64.zip       
+rm terraform_1.7.4_linux_amd64.zip   
 
-#######################################################
-# to check cloudwatch agent status on windows   
 #######################################################   
+# to check cloudwatch agent status on windows      
+#######################################################      
 & $Env:ProgramFiles\Amazon\AmazonCloudWatchAgent\amazon-cloudwatch-agent-ctl.ps1 -m ec2 -a status   
 #check config file contents    
 cat C:\ProgramData\Amazon\AmazonCloudWatchAgent\Configs\ssm__cloudwatch-agent-win_config   
