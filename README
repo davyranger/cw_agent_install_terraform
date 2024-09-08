@@ -31,3 +31,12 @@ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a 
 cat /opt/aws/amazon-cloudwatch-agent/logs/amazon-cloudwatch-agent.log   
 ##run command from the command line to build your config file using the configuration wizard   
 sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
+
+############################################################   
+#to test the failure of a windows or linux cwagent install      
+#insert the below command into the run command     
+############################################################     
+"runCommand": [
+	"Write-Host 'Failing intentionally'",
+	"exit 1"
+]
